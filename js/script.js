@@ -45,14 +45,19 @@ const filterCountriesByInitials = (searchText) => {
 
 const filterCountriesByWord = (searchText) => {
     let search = searchText.toLowerCase();
-    console.log(search)
     const filteredCountries = countries.filter((country) => {
-        return country.toLowerCase().includes(searchText);
+        return country.toLowerCase().includes(search);
 
     });
     return searchText === '' ? countries : filteredCountries;
 }
 
+searchInput.addEventListener('input',() => {
+    let len = filterCountriesByWord(searchInput.value).length;
+    len > 0  ? document.querySelector('#filtered-countries').textContent = `Countries containing ${searchInput.value} are ${len}.` : ''
+    
+    displayCountries(filterCountriesByWord(searchInput.value))
+})
 
 initialTextButton.addEventListener('click',() => {
     searchInput.addEventListener('input',() => {
@@ -73,12 +78,7 @@ textWordButton.addEventListener('click', () => {
 
 });
 
-searchInput.addEventListener('input',() => {
-    let len = filterCountriesByWord(searchInput.value).length;
-    len > 0  ? document.querySelector('#filtered-countries').textContent = `Countries containing ${searchInput.value} are ${len}.` : ''
-    
-    displayCountries(filterCountriesByWord(searchInput.value))
-})
+
 
 displayCountries(countries);
 

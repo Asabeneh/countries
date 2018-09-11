@@ -53,7 +53,7 @@ input:focus {
     margin-bottom: 3px;
     box-shadow: 0px 0px 2px 5px rgb(235, 237, 240);
     font-weight: bolder;
-    letter-spacing: 1.125em;
+    /* letter-spacing: 1.125em; */
     text-transform: uppercase;
 
     
