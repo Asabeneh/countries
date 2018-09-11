@@ -2,8 +2,8 @@
 const countriesWrapper = document.querySelector('.countries-wrapper');
 let searchInput = document.querySelector('#search-text')
 let totalCountries =document.querySelector('#total-countries');
-const initialText = document.querySelector("#starts-with");
-const textWord = document.querySelector("#text-word");
+const initialTextButton = document.querySelector("#starts-with");
+const textWordButton = document.querySelector("#text-word");
 
 
 totalCountries.textContent =  'Total Number of countries ' + countries.length;
@@ -33,17 +33,12 @@ const displayCountries = (arr) => {
 }
 
 
-searchInput.addEventListener('input',() => {
-    let len = filterCountriesByInitials(searchInput.value).length;
-    len > 0  ? document.querySelector('#filtered-countries').textContent = `Countries starting with ${searchInput.value} are ${len}.` : ''
-    
-    displayCountries(filterCountriesByInitials(searchInput.value))
-})
+
 
 const filterCountriesByInitials = (searchText) => {
-    let search = searchText.slice(0,1).toUpperCase() + searchText.slice(1).toLowerCase();
+    let search = searchText.toLowerCase();
     const filteredCountries = countries.filter((country) => {
-        return country.includes(search);
+        return country.toLowerCase().includes(search);
     });
     return searchText === '' ? countries : filteredCountries;
 }
@@ -57,6 +52,33 @@ const filterCountriesByWord = (searchText) => {
     });
     return searchText === '' ? countries : filteredCountries;
 }
+
+
+initialTextButton.addEventListener('click',() => {
+    searchInput.addEventListener('input',() => {
+        let len = filterCountriesByInitials(searchInput.value).length;
+        len > 0  ? document.querySelector('#filtered-countries').textContent = `Countries starting with ${searchInput.value} are ${len}.` : ''
+        
+        displayCountries(filterCountriesByInitials(searchInput.value))
+    })
+});
+
+textWordButton.addEventListener('click', () => {
+    searchInput.addEventListener('input',() => {
+        let len = filterCountriesByWord(searchInput.value).length;
+        len > 0  ? document.querySelector('#filtered-countries').textContent = `Countries containing ${searchInput.value} are ${len}.` : ''
+        
+        displayCountries(filterCountriesByWord(searchInput.value))
+    })
+
+});
+
+searchInput.addEventListener('input',() => {
+    let len = filterCountriesByWord(searchInput.value).length;
+    len > 0  ? document.querySelector('#filtered-countries').textContent = `Countries containing ${searchInput.value} are ${len}.` : ''
+    
+    displayCountries(filterCountriesByWord(searchInput.value))
+})
 
 displayCountries(countries);
 
