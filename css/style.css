@@ -74,3 +74,6 @@ button {
 button:focus {
     border:2px solid gray;
 }
+.active{
+    background:lightsalmon;
+}
