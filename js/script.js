@@ -75,7 +75,7 @@ const sortCountries = () => {
 searchInput.addEventListener('input',() => {
     let len = filterCountriesByWord(searchInput.value).length;
     if(len > 0 && searchInput.value !='') {
-        filteredCountriesCount.innerHTML = `Countries containing <strong><em> ${searchInput.value} </em></strong> ${len >= 2 ? 'are':'is'} ${len}.`;
+        filteredCountriesCount.innerHTML = `Countries containing <strong><em> ${searchInput.value} </em></strong> ${len >= 2 ? 'are':'is'} <span>${len}</span>.`;
     }
     else {
         filteredCountriesCount.innerHTML = '';
@@ -92,7 +92,7 @@ initialTextButton.addEventListener('click',() => {
     searchInput.addEventListener('input',() => {
         let len = filterCountriesByInitials(searchInput.value).length;
         if(len > 0 && searchInput.value !=='') {
-            filteredCountriesCount.innerHTML = `Countries start with <strong><em> ${searchInput.value} </em></strong> ${len >=2 ? 'are':'is'} ${len}.`;
+            filteredCountriesCount.innerHTML = `Countries start with <strong><em> ${searchInput.value} </em></strong> ${len >=2 ? 'are':'is'} <span>${len}</span>.`;
         }
         else  {
             filteredCountriesCount.innerHTML= '';
@@ -109,7 +109,7 @@ textWordButton.addEventListener('click', () => {
     searchInput.addEventListener('input',() => {
         let len = filterCountriesByWord(searchInput.value).length;
         if(len > 0 && searchInput.value !='') {
-            filteredCountriesCount.innerHTML = `Countries containing  <strong><em> ${searchInput.value} </em></strong> ${len >=2 ? 'are':'is'} ${len}.`;
+            filteredCountriesCount.innerHTML = `Countries containing  <strong><em> ${searchInput.value} </em></strong> ${len >=2 ? 'are':'is'} <span>${len}</span>.`;
         }
         else {
             filteredCountriesCount.innerHTML = '';
