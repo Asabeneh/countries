@@ -2,6 +2,7 @@
     box-sizing: border-box;
 }
 body {
+    background-image: url("./images/map_image.jpg");
     font-family: 'Roboto', sans-serif;
 }
 header {
@@ -12,7 +13,7 @@ header {
 .flex-container {
     display: flex;
     flex-direction: column;
-    width:75%;
+    width:80%;
     margin:auto;
 }
 .flex-container div {
@@ -66,14 +67,20 @@ input:focus {
 }
 button {
     height: 40px;
-    border:none;
+    border: 1px solid rgb(245, 88, 88);
     outline: none;
-    background:lightgoldenrodyellow;
+    background:lightsalmon;
     margin-bottom:10px;
+    font-family : inherit;
+    font-size: 1em;
 }
 button:focus {
-    border:2px solid gray;
+    border:1px solid rgb(245, 88, 88);
+    color:white;
 }
 .active{
-    background:lightsalmon;
+    background:#e24c4cf3;
+}
+i{
+    font-size:18px;
 }

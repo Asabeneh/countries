@@ -1,61 +1,15 @@
 
 const countriesWrapper = document.querySelector('.countries-wrapper');
 let searchInput = document.querySelector('#search-text')
+let filteredCountriesCount = document.querySelector('#filtered-countries')
 let totalCountries =document.querySelector('#total-countries');
 const initialTextButton = document.querySelector("#starts-with");
 const textWordButton = document.querySelector("#text-word");
 const sortButton = document.querySelector('#sort');
 
-
-sortButton.addEventListener('click',() => {
-    // let toggle = true;
-    // let icon = document.querySelector('i');
-
-    // if(toggle) {
-    //     icon.classList.remove('fa-sort-alpha-down');
-    //     icon.classList.add('fa-sort-alpha-up')
-    //     countries.reverse();
-    //     displayCountries(countries);
-    //     toggle = false;
-
-    // }
-    // else {
-    //     displayCountries(countries);
-    //     toggle = false;
-    //     icon.classList.remove('fa-sort-alpha-up');
-    //     icon.classList.add('fa-sort-alpha-down');
-
-    //     toggle = true;
-
-    // }
-
-  
-
-    let icon = document.querySelector('i');
-  if (icon.classList.contains('fa-sort-alpha-down')){
-        icon.classList.remove('fa-sort-alpha-down');
-        icon.classList.add('fa-sort-alpha-up')
-        let sortedCountries = [...countries];
-        sortedCountries.reverse();
-        displayCountries(sortedCountries);
-        
-    }
-    else {
-        displayCountries(countries);
-        icon.classList.remove('fa-sort-alpha-up');
-        icon.classList.add('fa-sort-alpha-down')
-    }
-
-
-    
-
-    console.log(icon);
-})
-
-
 totalCountries.textContent =  'Total Number of countries ' + countries.length;
 
-const hexaColor = function() {
+const hexaColor = () => {
     let numbersLetters = '0123456789abcdef'.split('');
     let hexaNumbers = '';
     let randIndex;
@@ -79,39 +33,70 @@ const displayCountries = (arr) => {
     })
 }
 
-
-
-
 const filterCountriesByInitials = (searchText) => {
     let search = searchText.toLowerCase();
     const filteredCountries = countries.filter((country) => {
-        return country.toLowerCase().includes(search);
+        return country.toLowerCase().startsWith(search);
     });
-    return searchText === '' ? countries : filteredCountries;
+    return search === '' ? countries : filteredCountries;
 }
 
 const filterCountriesByWord = (searchText) => {
     let search = searchText.toLowerCase();
     const filteredCountries = countries.filter((country) => {
         return country.toLowerCase().includes(search);
-
     });
-    return searchText === '' ? countries : filteredCountries;
+    return search === '' ? countries : filteredCountries;
+}
+
+
+
+const sortCountries = () => {
+    let icon = document.querySelector('i');
+    initialTextButton.classList.remove('class','active');
+    textWordButton.classList.remove('active');
+    sortButton.classList.add('active')
+     if (icon.classList.contains('fa-sort-alpha-down')){
+           icon.classList.remove('fa-sort-alpha-down');
+           icon.classList.add('fa-sort-alpha-up')
+           let sortedCountries = [...countries];
+           sortedCountries.reverse();
+           displayCountries(sortedCountries);
+           
+       }
+       else {
+           displayCountries(countries);
+           icon.classList.remove('fa-sort-alpha-up');
+           icon.classList.add('fa-sort-alpha-down')
+       }
+
 }
 
 searchInput.addEventListener('input',() => {
     let len = filterCountriesByWord(searchInput.value).length;
-    len > 0  ? document.querySelector('#filtered-countries').textContent = `Countries containing ${searchInput.value} are ${len}.` : ''
+    if(len > 0 && searchInput.value !='') {
+        filteredCountriesCount.innerHTML = `Countries containing <strong><em> ${searchInput.value} </em></strong> ${len >= 2 ? 'are':'is'} ${len}.`;
+    }
+    else {
+        filteredCountriesCount.innerHTML = '';
+
+    }
     
     displayCountries(filterCountriesByWord(searchInput.value))
 })
 
 initialTextButton.addEventListener('click',() => {
-    initialTextButton.setAttribute('class','active')
+    initialTextButton.setAttribute('class','active');
+    sortButton.classList.remove('active')
     textWordButton.classList.remove('active');
     searchInput.addEventListener('input',() => {
         let len = filterCountriesByInitials(searchInput.value).length;
-        len > 0  ? document.querySelector('#filtered-countries').textContent = `Countries starting with ${searchInput.value} are ${len}.` : ''
+        if(len > 0 && searchInput.value !=='') {
+            filteredCountriesCount.innerHTML = `Countries start with <strong><em> ${searchInput.value} </em></strong> ${len >=2 ? 'are':'is'} ${len}.`;
+        }
+        else  {
+            filteredCountriesCount.innerHTML= '';
+        }
         
         displayCountries(filterCountriesByInitials(searchInput.value))
     })
@@ -119,17 +104,29 @@ initialTextButton.addEventListener('click',() => {
 
 textWordButton.addEventListener('click', () => {
     textWordButton.setAttribute('class','active');
-    initialTextButton.classList.remove('active')
+    initialTextButton.classList.remove('active');
+    sortButton.classList.remove('active')
     searchInput.addEventListener('input',() => {
         let len = filterCountriesByWord(searchInput.value).length;
-        len > 0  ? document.querySelector('#filtered-countries').textContent = `Countries containing ${searchInput.value} are ${len}.` : ''
+        if(len > 0 && searchInput.value !='') {
+            filteredCountriesCount.innerHTML = `Countries containing  <strong><em> ${searchInput.value} </em></strong> ${len >=2 ? 'are':'is'} ${len}.`;
+        }
+        else {
+            filteredCountriesCount.innerHTML = '';
+        }
         
         displayCountries(filterCountriesByWord(searchInput.value))
     })
 
 });
 
+sortButton.addEventListener('click',() => {
+    sortCountries()
+   
+   
+   })
 
 
 displayCountries(countries);
+
 
