@@ -1,99 +1,93 @@
-*,*::after,*::before{
-    box-sizing: border-box;
-    margin-top: 0;
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin-top: 0;
 }
 body {
-    background-image: url('../images/map_image.jpg');
-    font-family: 'Roboto', sans-serif;
+  background-image: url("../images/map_image.jpg");
+  font-family: "Roboto", sans-serif;
 }
 header {
-    margin: auto;
-    text-align: center;
-    background-image: url("../images/map_image.jpg");
-
+  margin: auto;
+  text-align: center;
+  background-image: url("../images/map_image.jpg");
 }
 
 .flex-container {
-    display: flex;
-    flex-direction: column;
-    width:80%;
-    margin:auto;
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin: auto;
 }
 .flex-container div {
-    margin:auto;
-    background:lightgoldenrodyellow;
-    width:100%;
-    margin:5px;
+  margin: auto;
+  background: lightgoldenrodyellow;
+  width: 100%;
+  margin: 5px;
 }
 
 input {
-    width: 100%;
-    margin: auto;
-    height:40px;
-    outline: none;
-    border:none;
-    box-shadow: 0px 0px 2px 2px rgb(235, 237, 240);
-  
-   
-} 
-input::placeholder{
-    text-align: center;
+  width: 100%;
+  margin: auto;
+  height: 40px;
+  outline: none;
+  border: none;
+  box-shadow: 0px 0px 2px 2px rgb(235, 237, 240);
+}
+input::placeholder {
+  text-align: center;
 }
 input:focus {
-    box-shadow: 0px 0px 10px 1px red;  
-    border:none;
-    outline: none; 
-    border-radius:5px;
-    -webkit-transform: scaleY(1.075);
-    transform: scaleY(1.075);
-
+  box-shadow: 0px 0px 10px 1px red;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  -webkit-transform: scaleY(1.075);
+  transform: scaleY(1.075);
 }
 .countries-wrapper {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    align-items: center;
-   
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
 }
 .countries-wrapper div {
-    height: 80px;
-    line-height: 80px;
-    margin-bottom: 3px;
-    box-shadow: 0px 0px 2px 5px rgb(235, 237, 240);
-    font-weight: bolder;
-    text-transform: uppercase;
-
-    
+  height: 80px;
+  line-height: 80px;
+  margin-bottom: 3px;
+  box-shadow: 0px 0px 2px 5px rgb(235, 237, 240);
+  font-weight: bolder;
+  text-transform: uppercase;
 }
 .countries-wrapper div:hover {
-    -webkit-transform: scaleY(1.075);
-    transform: scaleY(1.075);
-    
+  -webkit-transform: scaleY(1.075);
+  transform: scaleY(1.075);
 }
 button {
-    height: 40px;
-    border: 1px solid rgb(245, 88, 88);
-    outline: none;
-    background:lightsalmon;
-    margin-bottom:10px;
-    font-family: 'Roboto', sans-serif;
-    font-size: 1em;
+  height: 40px;
+  border: 1px solid rgb(245, 88, 88);
+  outline: none;
+  background: lightsalmon;
+  margin-bottom: 10px;
+  font-family: "Roboto", sans-serif;
+  font-size: 1em;
 }
 button:focus {
-    border:1px solid rgb(245, 88, 88);
-    color:white;
-    font-family: inherit;
+  border: 1px solid rgb(245, 88, 88);
+  color: white;
+  font-family: inherit;
 }
-.active{
-    background:#e24c4cf3;
-    color:white;
+.active {
+  background: #e24c4cf3;
+  color: white;
 }
-i{
-    font-size:18px;
+i {
+  font-size: 18px;
 }
 strong {
-    color: #e24c4cf3;
+  color: #e24c4cf3;
 }
 span {
-    color:#6be922;
+  color: #6be922;
 }
