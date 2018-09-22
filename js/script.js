@@ -120,3 +120,5 @@ sortButton.addEventListener("click", () => {
 });
 
 displayCountries(countries);
+
+
