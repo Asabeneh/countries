@@ -5,6 +5,8 @@ let totalCountries = document.querySelector("#total-countries");
 const initialTextButton = document.querySelector("#starts-with");
 const textWordButton = document.querySelector("#text-word");
 const sortButton = document.querySelector("#sort");
+const title= document.querySelector('h2');
+
 
 totalCountries.textContent = "Total Number of countries " + countries.length;
 
@@ -18,6 +20,11 @@ const hexaColor = () => {
   }
   return "#" + hexaNumbers;
 };
+
+setInterval(() => {
+  title.style.color = hexaColor();
+  title.style.textDecoration='underline'
+},2500)
 
 const displayCountries = arr => {
   countriesWrapper.innerHTML = "";
