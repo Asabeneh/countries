@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>World Countries List</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+        crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link rel="stylesheet" type="text/css" media="screen" href="./css/style.css" />
-    
 </head>
+
 <body>
     <header>
         <h2>World Countries List</h2>
@@ -18,47 +20,19 @@
         <button id="starts-with">Starting Word</button>
         <button id="text-word">Search with any word</button>
         <button id="sort"> <i class="fas fa-sort-alpha-down"></i></button>
-       
-       
-        
+
     </header>
-    <main>
-            <div class="flex-container">
-                <div>
-                    <input type="text" id = "search-text" placeholder="Search country ...">
-                </div>
-                <div class="countries-wrapper"> </div>
-            
-                </div>
-                
+        <div class="flex-container">
+            <div>
+                <input type="text" id="search-text" placeholder="Search country ...">
+            </div>
+            <div class="countries-wrapper"> </div>
 
-    </main>
-    <footer></footer>
-    
-
+        </div>
     <script src="./js/countries.js"></script>
     <script src="./js/script.js"></script>
-    <script>
-    console.log(countries)
-   
-        let letters = 'ABCDEFGHIJKLMNOPQRSTUVWZYZ'.split('');
-        let countryObj = [];
-      
-        for( l of letters){
-            let c = countries.filter((country) => {
-                return l === country[0]
-            });
-            countryObj.push({l, len:c.length})
-            console.log(c.length)
-        }
-        
-        console.log(countryObj.sort(function(a,b){
-            return a - b;
-        }))
 
-    
-
-    
     </script>
 </body>
+
 </html>

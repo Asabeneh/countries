@@ -12,11 +12,13 @@ header {
   margin: auto;
   text-align: center;
   background-image: url("../images/map_image.jpg");
-  padding-top:25px;
+  padding-top: 25px;
 }
-p,h2,h4{
+p,
+h2,
+h4 {
   margin: 3px;
-  color:#666;
+  color: #666;
 }
 .flex-container {
   display: flex;
@@ -38,14 +40,15 @@ input {
   outline: none;
   border: none;
   box-shadow: 0px 0px 2px 2px rgb(235, 237, 240);
-  /* box-shadow: 0px 0px 2px 2px rgb(235, 237, 240); */
 }
 input::placeholder {
   text-align: center;
+  font-size:18px;
+  color:#333;
+
 }
 input:focus {
   box-shadow: 0px 0px 10px 5px rgb(7, 169, 169);
-  /* box-shadow: 0px 0px 10px 1px red; */
   border: none;
   outline: none;
   border-radius: 5px;
@@ -65,6 +68,7 @@ input:focus {
   box-shadow: 0px 0px 2px 5px rgb(235, 237, 240);
   font-weight: bolder;
   text-transform: uppercase;
+  border-radius: 5px;
 }
 .countries-wrapper div:hover {
   -webkit-transform: scaleY(1.075);
@@ -78,7 +82,8 @@ button {
   margin-bottom: 10px;
   font-family: "Roboto", sans-serif;
   font-size: 1em;
-  color:#666;
+  color: #666;
+  border-radius: 3px;
 }
 button:focus {
   border: 1px solid rgb(245, 88, 88);
