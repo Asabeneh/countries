@@ -26,7 +26,7 @@ setInterval(() => {
 }, 2500);
 
 const displayCountries = arr => {
-  let countries = [...arr]
+  let countries = [...arr];
   countriesWrapper.innerHTML = "";
   let div;
   countries.forEach(country => {
@@ -127,5 +127,4 @@ sortButton.addEventListener("click", () => {
 });
 
 displayCountries(countries);
-
 

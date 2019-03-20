@@ -30,7 +30,7 @@ h4 {
 }
 .flex-container div {
   margin: auto;
-  background: lightgoldenrodyellow;
+  /* background: lightgoldenrodyellow; */
   width: 100%;
   margin: 5px;
 }
@@ -46,7 +46,7 @@ input {
   border-radius: 25px;
   text-indent: 20px;
   font-size: 24px;
-  color: #333;
+  color: #666;
 }
 input::placeholder {
   text-align: center;
@@ -57,10 +57,8 @@ input::placeholder {
 }
 input:focus,
 input:hover {
-  /* box-shadow: 0px 0px 3px 2px rgb(7, 169, 169); */
-  /* box-shadow: 0px 0px 2px 2px rgb(86, 147, 240); */
-  box-shadow: 0px 0px 2px 2px rgb(133, 195, 246);
-  background: rgb(250, 249, 249);
+  box-shadow: 0px 0px 1px 2px rgb(133, 195, 246);
+  background: rgb(248, 242, 242);
   border: none;
   outline: none;
   border-radius: 25px;
@@ -79,8 +77,8 @@ input:hover {
 .countries-wrapper div {
   height: 80px;
   line-height: 80px;
-  margin-bottom: 3px;
-  box-shadow: 0px 0px 2px 5px rgb(235, 237, 240);
+  margin-bottom: 2px;
+  box-shadow: 0px 0px 5px 2px rgb(235, 237, 240); 
   font-weight: bolder;
   text-transform: uppercase;
   border-radius: 5px;
