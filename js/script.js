@@ -22,8 +22,6 @@ const hexaColor = () => {
 
 setInterval(() => {
   title.style.color = hexaColor()
-
-  title.style.textDecoration = 'underline'
 }, 2500)
 
 const displayCountries = arr => {
@@ -34,8 +32,8 @@ const displayCountries = arr => {
     div = document.createElement('div')
     div.textContent = country
     div.className = 'country'
-    div.style.background = hexaColor()
-    div.style.color = hexaColor()
+    //div.style.background = hexaColor()
+    //div.style.color = hexaColor()
     countriesWrapper.appendChild(div)
   })
 }
