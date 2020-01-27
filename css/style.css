@@ -71,8 +71,8 @@ h1 {
 }
 
 input {
-  width: 50%;
-  margin: 25px auto;
+  width: 40rem;
+  margin: auto;
   height: 50px;
   outline: none;
   border: none;
@@ -103,8 +103,19 @@ input:hover {
   transform: scaleY(1.075);
 }
 
+.search-icon {
+  color: white;
+  margin-left: 1rem;
+  opacity: 0.8;
+}
+
 .text-field {
   border-radius: 100px;
+  border-radius: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
 }
 
 .filtered-countries {
