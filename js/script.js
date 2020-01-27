@@ -22,23 +22,24 @@ const hexaColor = () => {
 
 setInterval(() => {
   title.style.color = hexaColor()
-
-  title.style.textDecoration = 'underline'
+  title.style.fontWeight = 700
 }, 2500)
 
 const displayCountries = arr => {
-  let countries = [...arr]
+  const countries = [...arr]
   countriesWrapper.innerHTML = ''
   let div
   countries.forEach(country => {
     div = document.createElement('div')
+    div.style.background = hexaColor()
     div.textContent = country
     div.className = 'country'
-    div.style.background = hexaColor()
-    div.style.color = hexaColor()
+
     countriesWrapper.appendChild(div)
   })
 }
+
+
 
 const filterCountriesByInitials = searchText => {
   let search = searchText.toLowerCase()

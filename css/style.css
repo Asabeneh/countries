@@ -36,7 +36,7 @@ p,
 h1,
 h2,
 h4 {
-  margin: 3px;
+  margin: 10px;
   color: white;
 }
 
@@ -94,7 +94,7 @@ input::placeholder {
 
 input:focus,
 input:hover {
-  box-shadow: 0px 0px 1px 2px rgb(133, 195, 246);
+  box-shadow: 0px 0px 1px 1px rgb(133, 195, 246);
   background: rgb(248, 242, 242);
   border: none;
   outline: none;
@@ -124,7 +124,7 @@ input:hover {
 
 .countries-wrapper {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: repeat(6, 1fr);
   grid-gap: 1rem;
   align-items: center;
   justify-items: center;
@@ -157,13 +157,16 @@ input:hover {
 
 button {
   height: 50px;
+  /*
   border: 1px solid rgb(245, 88, 88);
+  */
   outline: none;
   background: lightsalmon;
   margin-bottom: 10px;
   font-family: 'Roboto', sans-serif;
   font-size: 1em;
   color: #666;
+  color: white;
   border-radius: 3px;
   cursor: pointer;
 }
