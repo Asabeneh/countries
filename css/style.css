@@ -51,7 +51,6 @@ h1 {
 
 h1 {
   font-size: 60px;
-  margin: 15px auto;
   letter-spacing: 20px;
   text-transform: uppercase;
 }
@@ -114,7 +113,7 @@ input:hover {
 
 .countries-wrapper {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
   grid-gap: 1rem;
   align-items: center;
   justify-items: center;
@@ -147,8 +146,7 @@ input:hover {
 
 button {
   height: 50px;
-  /*
-  border: 1px solid rgb(245, 88, 88); */
+  border: 1px solid rgb(245, 88, 88);
   outline: none;
   background: lightsalmon;
   margin-bottom: 10px;
