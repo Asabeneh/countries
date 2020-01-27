@@ -1,33 +1,69 @@
+/* General */
+
 *,
 *::after,
 *::before {
   box-sizing: border-box;
   margin: 0;
 }
+
+/* body */
 body {
-  background-image: url('../images/map_image.jpg');
+  /*background-image: url('../images/map_image.jpg') */
   background-size: cover;
   font-family: 'Roboto', sans-serif;
   height: 100vh;
 }
+
+/* header */
+
+
 header {
   margin: auto;
   text-align: center;
-  /* background-image: url('../images/map_image.jpg'); */
-  padding-top: 25px;
+  background-image: linear-gradient(rgba(48, 132, 180, 0.6), rgba(15, 25, 53, 0.7)), url("../images/globe-2.jpg");
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 60vh;
 }
+
+/* Header title, text, buttons */
+
 p,
+h1,
 h2,
 h4 {
   margin: 3px;
-  color: #666;
+  color: white;
 }
+
+h1 {
+  color: white;
+  text-shadow: rgb(34, 42, 114);
+}
+
+.total-countries {
+  font-size: 24px;
+}
+
+h1 {
+  font-size: 60px;
+  margin: 15px auto;
+  letter-spacing: 20px;
+  text-transform: uppercase;
+}
+
+
 .flex-container {
   display: flex;
   flex-direction: column;
   width: 80%;
   margin: auto;
 }
+
 .flex-container div {
   margin: auto;
   /* background: lightgoldenrodyellow; */
@@ -36,8 +72,8 @@ h4 {
 }
 
 input {
-  width: 100%;
-  margin: auto;
+  width: 50%;
+  margin: 25px auto;
   height: 50px;
   outline: none;
   border: none;
@@ -48,6 +84,7 @@ input {
   font-size: 24px;
   color: #666;
 }
+
 input::placeholder {
   text-align: center;
   color: #333;
@@ -55,6 +92,7 @@ input::placeholder {
   font-size: 24px;
   line-height: 24px;
 }
+
 input:focus,
 input:hover {
   box-shadow: 0px 0px 1px 2px rgb(133, 195, 246);
@@ -65,31 +103,52 @@ input:hover {
   -webkit-transform: scaleY(1.075);
   transform: scaleY(1.075);
 }
+
 .text-field {
   border-radius: 100px;
 }
-.countries-wrapper {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  align-items: center;
+
+.filtered-countries {
+  font-size: 1.4em;
 }
+
+.countries-wrapper {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-gap: 1rem;
+  align-items: center;
+  justify-items: center;
+}
+
 .countries-wrapper div {
-  height: 80px;
-  line-height: 80px;
+  height: 215px;
+  width: 200px;
   margin-bottom: 2px;
-  box-shadow: 0px 0px 5px 2px rgb(235, 237, 240); 
+  box-shadow: 0px 0px 5px 2px rgb(235, 237, 240);
   font-weight: bolder;
   text-transform: uppercase;
   border-radius: 5px;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-image: linear-gradient(rgba(48, 132, 180, 0.4), rgba(28, 41, 78, 0.7)), url("../images/map_image.jpg");
+  background-size: cover;
+  background-position: center;
+  color: white;
 }
+
 .countries-wrapper div:hover {
-  -webkit-transform: scaleY(1.075);
-  transform: scaleY(1.075);
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+  transition: all ease-out .2s;
 }
+
 button {
-  height: 40px;
-  border: 1px solid rgb(245, 88, 88);
+  height: 50px;
+  /*
+  border: 1px solid rgb(245, 88, 88); */
   outline: none;
   background: lightsalmon;
   margin-bottom: 10px;
@@ -97,22 +156,28 @@ button {
   font-size: 1em;
   color: #666;
   border-radius: 3px;
+  cursor: pointer;
 }
+
 button:focus {
   border: 1px solid rgb(245, 88, 88);
   color: white;
   font-family: inherit;
 }
+
 .active {
   background: #e24c4cf3;
   color: white;
 }
+
 i {
   font-size: 18px;
 }
+
 strong {
   color: #e24c4cf3;
 }
+
 span {
   color: #6be922;
 }

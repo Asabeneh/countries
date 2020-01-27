@@ -6,29 +6,35 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>World Countries List</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
-        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+        integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link rel="stylesheet" type="text/css" media="screen" href="./css/style.css" />
 </head>
 
 <body>
     <header>
-        <h2>World Countries List</h2>
-        <h4 id="total-countries"></h4>
-        <p id="filtered-countries"></p>
-        <button id="starts-with">Starting Word</button>
-        <button id="text-word">Search with any word</button>
-        <button id="sort"> <i class="fas fa-sort-alpha-down"></i></button>
+        <div>
+            <h1>World Countries List</h1>
+            <h4 class="total-countries"></h4>
+            <p class="filtered-countries"></p>
+        </div>
+        <div>
+            <button class="starts-with">Starting Word</button>
+            <button class="text-word">Search with any word</button>
+            <button class="sort"> <i class="fas fa-sort-alpha-down"></i></button>
+            <div class="text-field">
+                <input type="text" class="search-text" placeholder="Search country ..." autofocus>
+            </div>
+        </div>
+
 
     </header>
-        <div class="flex-container">
-            <div class="text-field">
-                <input type="text" id="search-text" placeholder="Search country ..." autofocus>
-            </div>
-            <div class="countries-wrapper"> </div>
 
-        </div>
+    <div class="flex-container">
+
+        <div class="countries-wrapper"> </div>
+    </div>
     <script src="./js/countries.js"></script>
     <script src="./js/script.js"></script>
 
