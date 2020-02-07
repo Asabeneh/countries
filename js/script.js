@@ -7,6 +7,11 @@ const textWordButton = document.querySelector('.text-word')
 const sortButton = document.querySelector('.sort')
 const title = document.querySelector('h1')
 
+const startsWithFlag = false
+const includesFlag = false
+const reverseFlag = false
+const searchingFlag = false
+
 totalCountries.textContent = 'Total Number of countries ' + countries.length
 
 const hexaColor = () => {
@@ -24,6 +29,24 @@ setInterval(() => {
   title.style.color = hexaColor()
 }, 2500)
 
+const filterCountries = (arr, searchText, type = null) => {
+  let search = searchText.toLowerCase()
+  switch (type) {
+    case 'startswith':
+      const filteredArray = arr.filter(item =>
+        item.toLowerCase().startsWith(search)
+      )
+      return search === '' ? arr : filteredArray
+    case 'includes':
+      const filteredCountries = arr.filter(item =>
+        item.toLowerCase().includes(search)
+      )
+      return search === '' ? arr : filteredCountries
+
+    default:
+      return countries
+  }
+}
 const displayCountries = arr => {
   let countries = [...arr]
   countriesWrapper.innerHTML = ''
@@ -32,18 +55,22 @@ const displayCountries = arr => {
     div = document.createElement('div')
     div.textContent = country
     div.className = 'country'
-    //div.style.background = hexaColor()
-    //div.style.color = hexaColor()
+    div.style.background = hexaColor()
+    div.style.color = hexaColor()
     countriesWrapper.appendChild(div)
   })
 }
 
+const filteredCountries = filterCountries(countries, '')
+
+displayCountries(filteredCountries)
+
 const filterCountriesByInitials = searchText => {
   let search = searchText.toLowerCase()
-  const filteredCountries = countries.filter(country => {
-    return country.toLowerCase().startsWith(search)
+  const filteredArray = countries.filter(item => {
+    return item.toLowerCase().startsWith(search)
   })
-  return search === '' ? countries : filteredCountries
+  return search === '' ? arr : filteredArray
 }
 
 const filterCountriesByWord = searchText => {
@@ -54,11 +81,12 @@ const filterCountriesByWord = searchText => {
   return search === '' ? countries : filteredCountries
 }
 
-const sortCountries = () => {
+const reverseCountries = () => {
   let icon = document.querySelector('i')
   initialTextButton.classList.remove('class', 'active')
   textWordButton.classList.remove('active')
   sortButton.classList.add('active')
+
   if (icon.classList.contains('fa-sort-alpha-down')) {
     icon.classList.remove('fa-sort-alpha-down')
     icon.classList.add('fa-sort-alpha-up')
@@ -73,11 +101,11 @@ const sortCountries = () => {
 }
 
 searchInput.addEventListener('input', () => {
-  let len = filterCountriesByWord(searchInput.value).length
+  let len = filterCountries(countries, searchInput.value, 'includes').length
+  let grammar = len >= 2 ? 'are' : 'is'
+  let subtitle = `Countries containing <strong><em> ${searchInput.value} </em></strong> ${grammar} <span>${len}</span>.`
   if (len > 0 && searchInput.value != '') {
-    filteredCountriesCount.innerHTML = `Countries containing <strong><em> ${
-      searchInput.value
-    } </em></strong> ${len >= 2 ? 'are' : 'is'} <span>${len}</span>.`
+    filteredCountriesCount.innerHTML = subtitle
   } else {
     filteredCountriesCount.innerHTML = ''
   }
@@ -90,7 +118,8 @@ initialTextButton.addEventListener('click', () => {
   sortButton.classList.remove('active')
   textWordButton.classList.remove('active')
   searchInput.addEventListener('input', () => {
-    let len = filterCountriesByInitials(searchInput.value).length
+    let len = filterCountries(countries, searchInput.value, 'startswith')
+    //let len = filterCountriesByInitials(searchInput.value).length
     if (len > 0 && searchInput.value !== '') {
       filteredCountriesCount.innerHTML = `Countries start with <strong><em> ${
         searchInput.value
@@ -99,7 +128,9 @@ initialTextButton.addEventListener('click', () => {
       filteredCountriesCount.innerHTML = ''
     }
 
-    displayCountries(filterCountriesByInitials(searchInput.value))
+    displayCountries(
+      filterCountries(countries, searchInput.value, 'startswith')
+    )
   })
 })
 
@@ -122,7 +153,5 @@ textWordButton.addEventListener('click', () => {
 })
 
 sortButton.addEventListener('click', () => {
-  sortCountries()
+  reverseCountries()
 })
-
-displayCountries(countries)
