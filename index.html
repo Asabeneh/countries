@@ -17,22 +17,26 @@
         <h2>World Countries List</h2>
         <h4 id="total-countries"></h4>
         <p id="filtered-countries"></p>
+        <div class="buttons-wrapper">
         <button id="starts-with">Starting Word</button>
         <button id="text-word">Search with any word</button>
         <button id="sort"> <i class="fas fa-sort-alpha-down"></i></button>
+    </div>
+
+        <div class="text-field">
+            <div><input type="text" id="search-text" placeholder="Search country ..." autofocus></div>
+            <div><i class="fas fa-search fa-2x search-icon"></i></div>
+        </div>
 
     </header>
-        <div class="flex-container">
-            <div class="text-field">
-                <input type="text" id="search-text" placeholder="Search country ..." autofocus>
-            </div>
-            <div class="countries-wrapper"> </div>
 
+        <div class="countries-container">       
+            <div class="countries-wrapper"></div>
         </div>
+
     <script src="./js/countries.js"></script>
     <script src="./js/script.js"></script>
 
-    </script>
 </body>
 
 </html>
